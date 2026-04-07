@@ -1,0 +1,186 @@
+:root {
+    --color-primary: #9E4A2C;
+    --color-secondary: #C6A36D;
+    --color-bg: #1c1108;
+    --color-bg-card: #271a0e;
+    --color-text: #f0e6d3;
+    --color-text-muted: #8a7a68;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    height: 100%;
+}
+
+/* ── Layout ── */
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.page-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1.5rem 2rem;
+}
+
+/* ── Hero ── */
+
+.hero {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    letter-spacing: 0.05em;
+    text-transform: lowercase;
+}
+
+h1:focus {
+    outline: none;
+}
+
+.hero-subtitle {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: var(--color-text-muted);
+}
+
+/* ── Cards ── */
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    max-width: 800px;
+    width: 100%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 240px;
+    min-height: 200px;
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border: 2px solid var(--color-primary);
+    background-color: var(--color-bg-card);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+.card-active {
+    cursor: pointer;
+}
+
+.card-active:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(158, 74, 44, 0.5);
+    border-color: var(--color-secondary);
+}
+
+.card-inactive {
+    opacity: 0.5;
+    cursor: default;
+    border-style: dashed;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--color-secondary);
+    margin-bottom: 0.4rem;
+}
+
+.card-description {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+}
+
+/* ── Footer ── */
+
+.footer {
+    padding: 1.5rem 1rem;
+    border-top: 1px solid rgba(158, 74, 44, 0.4);
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.footer-link {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    color: var(--color-secondary);
+}
+
+.footer-icon {
+    margin-right: 0.25rem;
+}
+
+/* ── Blazor error UI ── */
+
+#blazor-error-ui {
+    background: rgba(158, 74, 44, 0.9);
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    color: white;
+}
+
+#blazor-error-ui .dismiss {
+    cursor: pointer;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.5rem;
+}
+
+.blazor-error-boundary {
+    background: var(--color-primary);
+    padding: 1rem;
+    color: white;
+    border-radius: 4px;
+}
+
+    .blazor-error-boundary::after {
+        content: "An error has occurred.";
+    }
