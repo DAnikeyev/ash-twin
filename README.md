@@ -1,6 +1,6 @@
 # ash-twin
 
-A personal projects hub — a single-page Blazor Web App on .NET 9 that showcases deployed side projects.
+A personal projects hub — a single-page Blazor Web App on .NET 10 that showcases deployed side projects.
 
 ## Features
 
@@ -11,14 +11,14 @@ A personal projects hub — a single-page Blazor Web App on .NET 9 that showcase
 
 ## Tech Stack
 
-- [.NET 9](https://dotnet.microsoft.com/) — Blazor Web App (interactive server rendering)
+- [.NET 10](https://dotnet.microsoft.com/) — Blazor Web App (interactive server rendering)
 - Docker — containerized, single image
 
 ## Getting Started
 
 ### Prerequisites
 
-- [.NET 9 SDK](https://dotnet.microsoft.com/download/dotnet/9.0)  **or** [Docker](https://www.docker.com/)
+- [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)  **or** [Docker](https://www.docker.com/)
 
 ### Run locally (dotnet)
 
@@ -60,8 +60,8 @@ ash-twin/
 
 ## Contact
 
-- Telegram: [@DAnikeyev](https://t.me/DAnikeyev)
-- Email: [contact@ash-twin.com](mailto:contact@ash-twin.com)
+- Telegram: [@DmitryAnikeyev](https://t.me/DmitryAnikeyev)
+- Email: [DmitryAnikeyev@gmail.com](mailto:DmitryAnikeyev@gmail.com)
 - GitHub: [DAnikeyev/ash-twin](https://github.com/DAnikeyev/ash-twin)
 
 ## License

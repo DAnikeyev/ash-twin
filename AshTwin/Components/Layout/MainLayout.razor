@@ -1,21 +1,31 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page-wrapper">
+<div class="page-wrapper @(isNightMode ? "" : "back-mode")">
+    <button
+        type="button"
+        class="theme-toggle @(isNightMode ? "" : "flipped") @(isAnimating ? "sand-shimmer" : "")"
+        @onclick="ToggleTheme"
+        aria-label="Toggle dark and light theme"
+        aria-pressed="@(!isNightMode)">
+        <img src="hourglass.png" alt="" />
+    </button>
+
     <main class="page-main">
         @Body
     </main>
 
     <footer class="footer">
         <div class="footer-content">
-            <a href="https://t.me/DAnikeyev" target="_blank" rel="noopener noreferrer" class="footer-link">
+            <a href="https://t.me/DmitryAnikeyev" target="_blank" rel="noopener noreferrer" class="footer-link">
                 <span class="footer-icon">✈️</span> Telegram
             </a>
-            <a href="mailto:contact@ash-twin.com" class="footer-link">
+            <a href="mailto:DmitryAnikeyev@gmail.com" class="footer-link">
                 <span class="footer-icon">✉️</span> Email
             </a>
             <a href="https://github.com/DAnikeyev/ash-twin" target="_blank" rel="noopener noreferrer" class="footer-link">
                 <span class="footer-icon">🐙</span> GitHub
             </a>
+            <span class="footer-credits">Made by Dmitry Anikeyev 2026</span>
         </div>
     </footer>
 </div>
@@ -25,3 +35,18 @@
     <a href="." class="reload">Reload</a>
     <span class="dismiss">🗙</span>
 </div>
+
+@code {
+    private bool isNightMode = true;
+    private bool isAnimating;
+
+    private async Task ToggleTheme()
+    {
+        isNightMode = !isNightMode;
+        isAnimating = true;
+        StateHasChanged();
+
+        await Task.Delay(900);
+        isAnimating = false;
+    }
+}
