@@ -35,11 +35,27 @@ Open <http://localhost:5001> in your browser.
 # Build the image
 docker build -t ash-twin .
 
-# Start the container — app is available on host port 5001
-docker run -p 5001:5001 ash-twin
+# Start the container with a fixed name — app is available on host port 5001
+docker run --name ash-twin -p 5001:5001 ash-twin
 ```
 
 Open <http://localhost:5001> in your browser.
+
+### Deploy with PowerShell
+
+To build and start the app in one Docker command, this repository includes a `compose.yaml` file and a small PowerShell wrapper:
+
+```powershell
+.\deploy.ps1
+```
+
+The script runs:
+
+```powershell
+docker compose up --build -d
+```
+
+This starts a container named `ash-twin`.
 
 ## Project Structure
 
@@ -54,6 +70,8 @@ ash-twin/
 │   ├── wwwroot/
 │   │   └── app.css                # Custom styles & color scheme
 │   └── Program.cs
+├── compose.yaml               # Docker Compose config for one-command deploy
+├── deploy.ps1                 # PowerShell deploy helper
 ├── Dockerfile
 └── README.md
 ```

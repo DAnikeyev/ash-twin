@@ -1,0 +1,9 @@
+services:
+  ash-twin:
+    container_name: ash-twin
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
+    restart: unless-stopped
